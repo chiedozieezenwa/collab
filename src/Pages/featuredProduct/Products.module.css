@@ -70,4 +70,10 @@ p {
     text-transform: uppercase;
     background: transparent;
     margin-top: 32px;
+    cursor: pointer;
+}
+
+.load_button:hover {
+    background: rgba(35, 166, 240, 1);
+    color: white;
 }

@@ -5,6 +5,21 @@
     flex-direction: column;
     align-items: center;
     padding-top: 24px;
+    cursor: pointer;
+}
+
+.container:hover img {
+    animation: scale 1s forwards;
+}
+
+@keyframes scale {
+    from {
+        scale: 1;
+    }
+
+    to {
+        scale: 1.2;
+    }
 }
 
 .details {
