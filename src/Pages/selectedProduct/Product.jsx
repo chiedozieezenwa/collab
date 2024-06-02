@@ -2,6 +2,8 @@ import { useGetProductsQuery } from '../../redux/ProductsApi';
 import Navbar from "../../components/Navbar/Navbar"
 import Topnav from "../../components/Topnav/Topnav"
 import { useParams } from 'react-router-dom';
+import design from './Product.module.css';
+import rightIcon from '../../assets/right-icon.svg'
 
 const Product = () => {
     // eslint-disable-next-line no-unused-vars
@@ -27,6 +29,11 @@ const Product = () => {
         <div>
             <Topnav />
             <Navbar />
+            <div className={design.navigation}>
+                <a href='/' className={design.home_text}>Home</a>
+                <img src={rightIcon} alt="Right icon" />
+                <h6 className={design.shop_text}>Shop</h6>
+            </div>
             <h1>Product ID: {id}</h1>
             <h1>{product.title}</h1>
             <img src={product.thumbnail} alt={product.title} />
