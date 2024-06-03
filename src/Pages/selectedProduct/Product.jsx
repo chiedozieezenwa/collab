@@ -34,12 +34,22 @@ const Product = () => {
                 <img src={rightIcon} alt="Right icon" />
                 <h6 className={design.shop_text}>Shop</h6>
             </div>
-            <h1>Product ID: {id}</h1>
-            <h1>{product.title}</h1>
-            <img src={product.thumbnail} alt={product.title} />
-            <p>{product.category}</p>
-            <p>{product.price}</p>
-            <p>{product.discountPercentage}% off</p>
+            <div className={design.product__container}>
+              <div className={design.product__container_gallery}>
+                <div className={design.thumbnail}>
+                  <img src={product.thumbnail} alt={product.title} />
+                </div>
+                <div className={design.other_images}>
+                  <img src={product.thumbnail} alt={product.title} />
+                </div>
+              </div>
+              <div className={design.product__container_details}>
+                <h4>{product.title}</h4>
+                <p>{product.category}</p>
+                <p>{product.price}</p>
+                <p>{product.discountPercentage}% off</p>
+              </div>
+            </div>
         </div>
     )
 }
