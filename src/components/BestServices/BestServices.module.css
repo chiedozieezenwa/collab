@@ -1,16 +1,25 @@
 .container {
     box-sizing: border-box;
     width: 100%;
-    height: 632px;
     display: flex;
+    align-items: center;
     justify-content: center;
+    margin-top: 2rem;
 }
 
 .content {
     width: 1050px;
-    height: 616px;
-    display: grid;
-    place-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.main {
+    width: 1045px;
+    height: 274px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .title {
@@ -19,7 +28,6 @@
     gap: 10px;
     justify-content: center;
     align-items: center;
-    text-align: center;
 }
 
 .title > p {
@@ -46,14 +54,6 @@
     font-size: 14px;
 }
 
-.main {
-    width: 1045px;
-    height: 274px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .card {
     width: 328px;
     height: 274px;
@@ -67,25 +67,20 @@
 @media screen and (max-width: 414px) {
     .container {
         width: 414px;
-        height: 1114px;
+        height: 1006px;
+        display: flex;
     }
 
     .content {
-        width: 100%;
-        display: grid;
-        grid-template-columns: 1fr;
-    }
-
-    .title {
-        width: 300px;
-        height: 122px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
     }
 
     .main {
+        height: 842px;
         width: 100%;
-        display: grid;
-        grid-template-columns: 1fr;
-        place-items: center;
-        gap: 50px;
+        display: flex;
+        flex-direction: column;
     }
 }
