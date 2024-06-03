@@ -12,7 +12,7 @@
 
 .title {
     width: 187px;
-    height: 58px;
+    /* height: 58px; */
     display: flex;
     align-items: center;
 }
@@ -42,6 +42,14 @@
     align-items: center;
     gap: 3px;
     font-family: 'Montserrat';
+    font-size: 14px;
+    font-weight: 700;
+    color: rgba(115, 115, 115, 1);
+}
+
+.nav-list-item > a {
+    color: rgba(115, 115, 115, 1);
+    text-decoration: none;
     font-size: 14px;
     font-weight: 700;
 }

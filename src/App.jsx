@@ -1,20 +1,20 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Home from "./Pages/Home"
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Home from './Pages/Home/Home'
 // eslint-disable-next-line no-unused-vars
-import Product from "./Pages/selectedProduct/Product"
-
+import SelectedProduct from './Pages/selectedProduct/SelectedProduct';
+import Cart from './Pages/Cart/Cart';
 
 const App = () => {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/product/:id" element={<Product />} />
+        <Route path="/product/:id" element={<SelectedProduct />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </Router>
-  );
-};
+  )
+}
 
 export default App
