@@ -42,4 +42,5 @@
 .cart__container {
     display: flex;
     gap: 56px;
+    background: #FAFAFA;
 }
