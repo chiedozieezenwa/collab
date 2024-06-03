@@ -1,0 +1,23 @@
+.navigation {
+    display: flex;
+    padding: 24px;
+    gap: 15px;
+}
+
+a.home_text {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    text-align: center;
+    color: #252B42;
+    text-decoration: none;
+}
+
+h6.shop_text {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    text-align: center;
+    color: #bdbdbd;
+    margin: 0;
+}

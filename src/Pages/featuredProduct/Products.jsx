@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useGetProductsQuery } from '../../redux/ProductsApi';
 import Cards from '../../components/ProductCard/Card';
-import design from './Products.module.css'
+import design from './Products.module.css';
+import { Link } from 'react-router-dom';
 
 const Products = () => {
   const { data, error, isLoading } = useGetProductsQuery();
@@ -20,14 +21,15 @@ const Products = () => {
   };
 
   const displayedItems = data.products.slice(0, visibleCount).map((item) => (
-    <Cards
-      key={item.id}
-      imageUrl={item.thumbnail}
-      title={item.title}
-      category={item.category}
-      price={item.price}
-      discountPercentage={item.discountPercentage}
-    />
+    <Link key={item.id} to={`/product/${item.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+      <Cards
+        imageUrl={item.thumbnail}
+        title={item.title}
+        category={item.category}
+        price={item.price}
+        discountPercentage={item.discountPercentage}
+      />
+    </Link>
   ));
 
   return (
