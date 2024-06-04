@@ -195,7 +195,7 @@
 }
 
 .product_pricecalc::before {
-    content: "$";
+    content: "₦";
 }
 
 .product_detail, .product_quantity, .product_price {

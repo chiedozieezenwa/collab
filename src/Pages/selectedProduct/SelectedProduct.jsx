@@ -1,4 +1,5 @@
 import { useGetProductsQuery } from '../../redux/Api';
+import { useState } from 'react';
 import Navbar from "../../components/Navbar/Navbar"
 import Topnav from "../../components/Topnav/Topnav"
 import { useParams } from 'react-router-dom';
@@ -10,9 +11,16 @@ import basket from '../../assets/basket.svg';
 import more from '../../assets/more.svg';
 import BestsellerProduct from '../../components/BestSeller/BestsellerProducts';
 
-const SelectedProduct = () => {
+// eslint-disable-next-line react/prop-types, no-unused-vars
+const SelectedProduct = ({ handleAddToCart }) => {
     // eslint-disable-next-line no-unused-vars
     const { id } = useParams();
+
+    const [quantity, setQuantity] = useState(1);
+
+    const handleIncrement = () => {
+      setQuantity(quantity + 1);
+    };
 
     const { data, error, isLoading } = useGetProductsQuery();
 
@@ -64,7 +72,7 @@ const SelectedProduct = () => {
                   <div className={design.optionBox}>
                     <img src={like} className={design.like}></img>
                   </div>
-                  <div className={design.optionBox}>
+                  <div className={design.optionBox} onClick={handleIncrement}>
                     <img src={basket} className={design.basket}></img>
                   </div>
                   <div className={design.optionBox}>
