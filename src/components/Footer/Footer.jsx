@@ -1,9 +1,22 @@
 import design from './Footer.module.css'
 import { Link } from 'react-router-dom'
+import facebook from '../../assets/footicon1.svg'
+import insta from '../../assets/footicon2.svg'
+import twitter from '../../assets/footicon3.svg'
 
 const Footer = () => {
   return (
-    <footer className={design.container}>        
+    <footer className={design.container}>
+        <div className={design.foot_head}>
+            <section>
+                <h3>Bandage</h3>    
+                <div className={design.foot_icons}>
+                    <img src={facebook} alt="Facebook" />
+                    <img src={insta} alt="Instagram" />
+                    <img src={twitter} alt="" />
+                </div>
+            </section>
+        </div>        
         <div className={design.foot_features}>
             <div className={design.list_items}>
                 <h5>Company Info</h5>
@@ -43,7 +56,9 @@ const Footer = () => {
             </div>
         </div>
         <div className={design.copyright_section}>
-            <h6>Made With Love By Finland All Right Reserved </h6>
+            <section>
+                <h6>Made With Love By Finland All Right Reserved </h6>
+            </section>  
         </div>
     </footer>
   )

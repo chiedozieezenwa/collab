@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import design from './ShoppingCart.module.css';
-import { useGetProductsQuery } from '../../redux/Api';
+import { useSelector } from 'react-redux';
 import add from '../../assets/add.svg'
 import minus from '../../assets/minus.svg'
+import BestSellerProducts from '../BestSeller/BestsellerProducts';
 
 const ShoppingCart = () => {
-    const { data } = useGetProductsQuery();
+    const cartItems = useSelector(state => state.cart.items);
 
-    const initialQuantities = data.products.slice(0, 3).reduce((acc, item) => {
+    const initialQuantities = cartItems.reduce((acc, item) => {
         acc[item.id] = 1;
         return acc;
       }, {});
@@ -28,7 +29,7 @@ const ShoppingCart = () => {
         }));
       };
 
-    const products = data.products.slice(0, 3).map((item) => (
+    const products = cartItems.map((item) => (
         <tr key={item.id} className={design.product}>
             <td className={design.product_detail}>
                 <div className={design.product_detaill}>
@@ -46,7 +47,7 @@ const ShoppingCart = () => {
                 <div className={design.minusButton} onClick={() => handleDecrement(item.id)}>
                     <img src={minus} alt="minus button" />
                 </div>
-                <input className={design.quantity} type="text" value={quantities[item.id]} readOnly />
+                <input className={design.quantity} type="text" value={quantities[item.id]} />
                 <div className={design.addButton} onClick={() => handleIncrement(item.id)}>
                     <img src={add} alt="add button" />
                 </div>
@@ -59,10 +60,15 @@ const ShoppingCart = () => {
                 </div>
             </td>
         </tr>
-    ));
+      ));
+
+    //const products = data.products.slice(0, 3).map((item) => (
+    
+    //));
 
     return (
-        <div className={design.container}>
+        <div>
+            <div className={design.container}>
             <h4 className={design.heading}>Shopping Cart</h4>
             <table className={design.table}>
                     <tr className={design.table_head}>
@@ -72,6 +78,8 @@ const ShoppingCart = () => {
                     </tr>
                     {products}
             </table>
+            </div>
+            <BestSellerProducts />
         </div>
     )
 }
